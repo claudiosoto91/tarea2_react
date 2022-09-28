@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Routes, Route, } from "react-router-dom";
+import Home from './pages/HomePage';
+import Indice from "./pages/Indice";
+import NotFound from './pages/NotFoundPage';
+import PokeApi from './pages/PokeApi';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/indice' element={<Indice />} />
+            <Route path='/pokeapi' element={<PokeApi />} />
+            <Route path='*' element={<NotFound />} />
+        </Routes>
+
     </div>
   );
 }
